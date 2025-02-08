@@ -1,4 +1,4 @@
-app = "quality-checker"  # Changed from your-app-name
+app = "quality-checker-app"  # Modified name
 primary_region = "lax"  # Los Angeles - change to your preferred region
 
 [build]
