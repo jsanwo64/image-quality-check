@@ -1,7 +1,6 @@
 from flask import Flask, request, jsonify
 from PIL import Image
 import io
-import imghdr
 from celery import Celery
 import uuid
 import magic
@@ -14,6 +13,8 @@ from datetime import datetime
 import json
 from flask_limiter import Limiter
 from flask_limiter.util import get_remote_address
+import numpy as np
+import cv2  # Add this import for OpenCV
 
 # Configure logging
 def setup_logging():
@@ -55,17 +56,38 @@ logger = setup_logging()
 
 app = Flask(__name__)
 
-# Celery Configuration
-app.config['CELERY_BROKER_URL'] = 'redis://localhost:6379/0'
-app.config['CELERY_RESULT_BACKEND'] = 'redis://localhost:6379/0'
+# Create Celery subclass to properly integrate with Flask
+class FlaskCelery(Celery):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if 'app' in kwargs:
+            self.init_app(kwargs['app'])
 
-# Initialize Celery
-celery = Celery(
-    app.name,
-    broker=app.config['CELERY_BROKER_URL'],
-    backend=app.config['CELERY_RESULT_BACKEND']
+    def init_app(self, app):
+        self.app = app
+        self.config_from_object(app.config)
+
+# Initialize Celery with Redis
+celery = FlaskCelery(
+    'app',
+    backend='redis://localhost:6379/0',
+    broker='redis://localhost:6379/0'
 )
-celery.conf.update(app.config)
+
+# Configure Celery
+celery.conf.update({
+    'broker_url': 'redis://localhost:6379/0',
+    'result_backend': 'redis://localhost:6379/0',
+    'task_serializer': 'json',
+    'accept_content': ['json'],
+    'result_serializer': 'json',
+    'enable_utc': True,
+    'broker_transport_options': {'visibility_timeout': 3600},
+    'worker_pool': 'solo'
+})
+
+# Initialize with Flask app
+celery.init_app(app)
 
 # Constants for image quality checks
 MAX_FILE_SIZE_MB = 10  # 10 MB
@@ -116,10 +138,10 @@ def is_safe_image(image_data, request_id):
     Returns (is_safe, error_message)
     """
     try:
-        # Check 1: Basic format validation
-        format_check = imghdr.what(None, image_data)
-        if not format_check or format_check not in ALLOWED_FORMATS:
-            logger.warning(f"Request {request_id}: Invalid format detected: {format_check}")
+        # Check 1: Basic format validation using filetype instead of imghdr
+        kind = filetype.guess(image_data)
+        if not kind or kind.mime.split('/')[0] != 'image' or kind.extension not in ALLOWED_FORMATS:
+            logger.warning(f"Request {request_id}: Invalid format detected: {kind.extension if kind else 'unknown'}")
             return False, f"Invalid image format. Allowed formats: {', '.join(ALLOWED_FORMATS.keys())}"
 
         # Check 2: MIME type validation using python-magic
@@ -128,18 +150,12 @@ def is_safe_image(image_data, request_id):
             logger.warning(f"Request {request_id}: Invalid MIME type detected: {mime}")
             return False, f"Invalid MIME type: {mime}"
 
-        # Check 3: Additional format validation using filetype
-        kind = filetype.guess(image_data)
-        if not kind or kind.mime not in ALLOWED_FORMATS.values():
-            logger.warning(f"Request {request_id}: File type verification failed")
-            return False, "File type verification failed"
-
-        # Check 4: Try opening with PIL to verify image integrity
+        # Check 3: Try opening with PIL to verify image integrity
         try:
             with Image.open(io.BytesIO(image_data)) as img:
                 img.verify()
                 
-            # Check 5: Second pass to check for image corruption
+            # Check 4: Second pass to check for image corruption
             with Image.open(io.BytesIO(image_data)) as img:
                 img.transpose(Image.FLIP_LEFT_RIGHT)
                 
@@ -154,11 +170,39 @@ def is_safe_image(image_data, request_id):
         logger.error(f"Request {request_id}: Security check failed: {str(e)}", exc_info=True)
         return False, f"Security check failed: {str(e)}"
 
+# Add constants for blur detection
+MIN_BLUR_VARIANCE = 100  # Adjust this threshold based on your needs
+
+def check_blur(image_data):
+    """
+    Check image blurriness using Laplacian variance method
+    Returns (is_sharp, variance)
+    """
+    try:
+        # Convert image data to numpy array
+        nparr = np.frombuffer(image_data, np.uint8)
+        img = cv2.imdecode(nparr, cv2.IMREAD_GRAYSCALE)
+        
+        # Calculate Laplacian variance
+        laplacian = cv2.Laplacian(img, cv2.CV_64F)
+        variance = laplacian.var()
+        
+        # Check if image is sharp enough
+        is_sharp = variance >= MIN_BLUR_VARIANCE
+        
+        return is_sharp, variance
+    except Exception as e:
+        logger.error(f"Error checking blur: {str(e)}")
+        return False, 0
+
 @celery.task(name='app.check_image_quality')
 def check_image_quality(image_data, request_id):
     """Analyze image quality metrics"""
     start_time = time.time()
     try:
+        # Initialize quality issues list at the very beginning
+        quality_issues = []
+
         # Perform security check before processing
         is_safe, error_message = is_safe_image(image_data, request_id)
         if not is_safe:
@@ -177,21 +221,27 @@ def check_image_quality(image_data, request_id):
         mode = img.mode
         file_size_kb = len(image_data) / 1024
         
-        # Log image details
+        # Check for blurriness
+        is_sharp, blur_variance = check_blur(image_data)
+        blur_score = round(blur_variance, 2)  # Round to 2 decimal places
+        
+        if not is_sharp:
+            quality_issues.append(f"Image is blurry (score: {blur_score}, minimum required: {MIN_BLUR_VARIANCE})")
+        
+        # Log image details with blur info
         log_request_details(request_id, 'image_analysis', {
             'width': width,
             'height': height,
             'format': format,
             'mode': mode,
-            'file_size_kb': file_size_kb
+            'file_size_kb': file_size_kb,
+            'blur_variance': blur_variance
         })
         
         # Calculate aspect ratio
         aspect_ratio = width / height
         
-        # Quality checks
-        quality_issues = []
-        
+        # Additional quality checks
         if width < MIN_WIDTH or height < MIN_HEIGHT:
             quality_issues.append(f"Low resolution: {width}x{height}. Minimum required: {MIN_WIDTH}x{MIN_HEIGHT}")
             
@@ -209,6 +259,11 @@ def check_image_quality(image_data, request_id):
             "height": height,
             "aspect_ratio": f"{aspect_ratio:.2f}",
             "file_size_kb": f"{file_size_kb:.2f}",
+            "blur": {
+                "is_blurry": not is_sharp,
+                "score": blur_score,
+                "threshold": MIN_BLUR_VARIANCE
+            },
             "quality_issues": quality_issues,
             "passes_quality_check": len(quality_issues) == 0,
             "processing_time": f"{time.time() - start_time:.2f}s"

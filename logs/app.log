@@ -1,0 +1,253 @@
+2025-02-08 09:58:16,372 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-08 09:58:16,373 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-08 09:58:16,376 - INFO -  * Restarting with stat
+2025-02-08 09:58:17,155 - WARNING -  * Debugger is active!
+2025-02-08 09:58:17,161 - INFO -  * Debugger PIN: 100-818-088
+2025-02-08 09:59:29,514 - INFO -  * Detected change in 'C:\\Users\\USER\\Documents\\img-quality-check\\app.py', reloading
+2025-02-08 09:59:29,594 - INFO -  * Restarting with stat
+2025-02-08 10:00:35,952 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-08 10:00:35,953 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-08 10:00:35,956 - INFO -  * Restarting with stat
+2025-02-08 10:00:36,708 - WARNING -  * Debugger is active!
+2025-02-08 10:00:36,714 - INFO -  * Debugger PIN: 100-818-088
+2025-02-08 10:01:01,345 - INFO - 127.0.0.1 - - [08/Feb/2025 10:01:01] "[33mGET / HTTP/1.1[0m" 404 -
+2025-02-08 10:01:02,202 - INFO - 127.0.0.1 - - [08/Feb/2025 10:01:02] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-08 10:01:10,574 - INFO - 127.0.0.1 - - [08/Feb/2025 10:01:10] "[33mGET /image-check HTTP/1.1[0m" 404 -
+2025-02-08 10:01:41,731 - INFO - 127.0.0.1 - - [08/Feb/2025 10:01:41] "[31m[1mGET /check-image HTTP/1.1[0m" 405 -
+2025-02-08 10:23:24,043 - INFO - Request 7e80446c-3d14-4e9d-8414-5b2f547d1c62: New image check request received from IP: 127.0.0.1
+2025-02-08 10:23:24,048 - INFO - {"request_id": "7e80446c-3d14-4e9d-8414-5b2f547d1c62", "timestamp": "2025-02-08T09:23:24.048447", "action": "file_received", "details": {"filename": "passport photograph.jpg", "content_type": "image/jpeg"}}
+2025-02-08 10:23:24,603 - INFO - Request 7e80446c-3d14-4e9d-8414-5b2f547d1c62: Image passed all security checks
+2025-02-08 10:23:25,563 - INFO - Request 7e80446c-3d14-4e9d-8414-5b2f547d1c62: Task submitted to Celery. Processing time: 1.52s
+2025-02-08 10:23:25,564 - INFO - 127.0.0.1 - - [08/Feb/2025 10:23:25] "POST /check-image HTTP/1.1" 200 -
+2025-02-08 10:23:25,738 - INFO - 127.0.0.1 - - [08/Feb/2025 10:23:25] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-08 10:24:41,843 - INFO - Request d14018d7-20a9-4ca9-aea1-91c6628feaec: New image check request received from IP: 127.0.0.1
+2025-02-08 10:24:41,846 - INFO - {"request_id": "d14018d7-20a9-4ca9-aea1-91c6628feaec", "timestamp": "2025-02-08T09:24:41.846084", "action": "file_received", "details": {"filename": "passport photograph.jpg", "content_type": "image/jpeg"}}
+2025-02-08 10:24:41,865 - INFO - Request d14018d7-20a9-4ca9-aea1-91c6628feaec: Image passed all security checks
+2025-02-08 10:24:41,946 - INFO - Request d14018d7-20a9-4ca9-aea1-91c6628feaec: Task submitted to Celery. Processing time: 0.10s
+2025-02-08 10:24:41,947 - INFO - 127.0.0.1 - - [08/Feb/2025 10:24:41] "POST /check-image HTTP/1.1" 200 -
+2025-02-08 10:25:06,855 - INFO - Request e96d7e98-3aa0-47bc-89c3-4c87587e568c: New image check request received from IP: 127.0.0.1
+2025-02-08 10:25:06,860 - INFO - {"request_id": "e96d7e98-3aa0-47bc-89c3-4c87587e568c", "timestamp": "2025-02-08T09:25:06.860330", "action": "file_received", "details": {"filename": "WhatsApp Image 2024-05-24 at 12.12.54_9ac42531.jpg", "content_type": "image/jpeg"}}
+2025-02-08 10:25:06,956 - INFO - Request e96d7e98-3aa0-47bc-89c3-4c87587e568c: Image passed all security checks
+2025-02-08 10:25:07,029 - INFO - Request e96d7e98-3aa0-47bc-89c3-4c87587e568c: Task submitted to Celery. Processing time: 0.17s
+2025-02-08 10:25:07,030 - INFO - 127.0.0.1 - - [08/Feb/2025 10:25:07] "POST /check-image HTTP/1.1" 200 -
+2025-02-08 10:25:07,260 - INFO - 127.0.0.1 - - [08/Feb/2025 10:25:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-08 10:26:46,546 - INFO - Status check requested for task 50f84597-fa53-48fa-9317-b15640428e6f from IP: 127.0.0.1
+2025-02-08 10:26:46,600 - INFO - Status for task 50f84597-fa53-48fa-9317-b15640428e6f: Processing
+2025-02-08 10:26:46,601 - INFO - 127.0.0.1 - - [08/Feb/2025 10:26:46] "GET /check-status/50f84597-fa53-48fa-9317-b15640428e6f HTTP/1.1" 200 -
+2025-02-08 10:27:26,988 - INFO - Request bfb91108-dc5a-481a-b26f-834e48da283c: New image check request received from IP: 127.0.0.1
+2025-02-08 10:27:26,997 - INFO - {"request_id": "bfb91108-dc5a-481a-b26f-834e48da283c", "timestamp": "2025-02-08T09:27:26.997504", "action": "file_received", "details": {"filename": "89792.jpg", "content_type": "image/jpeg"}}
+2025-02-08 10:27:27,025 - INFO - Request bfb91108-dc5a-481a-b26f-834e48da283c: Image passed all security checks
+2025-02-08 10:27:27,066 - INFO - Request bfb91108-dc5a-481a-b26f-834e48da283c: Task submitted to Celery. Processing time: 0.08s
+2025-02-08 10:27:27,067 - INFO - 127.0.0.1 - - [08/Feb/2025 10:27:27] "POST /check-image HTTP/1.1" 200 -
+2025-02-08 10:27:43,525 - INFO - Status check requested for task ba0b88ea-3112-4e95-b940-483df196f978 from IP: 127.0.0.1
+2025-02-08 10:27:43,560 - INFO - Status for task ba0b88ea-3112-4e95-b940-483df196f978: Processing
+2025-02-08 10:27:43,561 - INFO - 127.0.0.1 - - [08/Feb/2025 10:27:43] "GET /check-status/ba0b88ea-3112-4e95-b940-483df196f978 HTTP/1.1" 200 -
+2025-02-08 10:27:43,832 - INFO - 127.0.0.1 - - [08/Feb/2025 10:27:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-08 10:29:28,659 - INFO -  * Detected change in 'C:\\Users\\USER\\AppData\\Local\\Packages\\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\\LocalCache\\local-packages\\Python311\\site-packages\\celery\\events\\__init__.py', reloading
+2025-02-08 10:29:28,776 - INFO -  * Restarting with stat
+2025-02-08 10:29:35,075 - WARNING -  * Debugger is active!
+2025-02-08 10:29:35,085 - INFO -  * Debugger PIN: 100-818-088
+2025-02-08 10:34:29,220 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-08 10:34:29,220 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-08 10:34:29,224 - INFO -  * Restarting with stat
+2025-02-08 10:34:31,547 - WARNING -  * Debugger is active!
+2025-02-08 10:34:31,572 - INFO -  * Debugger PIN: 100-818-088
+2025-02-08 10:34:36,729 - INFO - Status check requested for task ba0b88ea-3112-4e95-b940-483df196f978 from IP: 127.0.0.1
+2025-02-08 10:34:36,889 - INFO - Status for task ba0b88ea-3112-4e95-b940-483df196f978: Processing
+2025-02-08 10:34:36,890 - INFO - 127.0.0.1 - - [08/Feb/2025 10:34:36] "GET /check-status/ba0b88ea-3112-4e95-b940-483df196f978 HTTP/1.1" 200 -
+2025-02-08 10:34:41,585 - INFO - Request bf3d39b1-cfff-4719-863a-e099b1612e88: New image check request received from IP: 127.0.0.1
+2025-02-08 10:34:41,601 - INFO - {"request_id": "bf3d39b1-cfff-4719-863a-e099b1612e88", "timestamp": "2025-02-08T09:34:41.600292", "action": "file_received", "details": {"filename": "89792.jpg", "content_type": "image/jpeg"}}
+2025-02-08 10:34:41,705 - INFO - Request bf3d39b1-cfff-4719-863a-e099b1612e88: Image passed all security checks
+2025-02-08 10:34:41,877 - INFO - Request bf3d39b1-cfff-4719-863a-e099b1612e88: Task submitted to Celery. Processing time: 0.29s
+2025-02-08 10:34:41,884 - INFO - 127.0.0.1 - - [08/Feb/2025 10:34:41] "POST /check-image HTTP/1.1" 200 -
+2025-02-08 10:34:42,191 - INFO - 127.0.0.1 - - [08/Feb/2025 10:34:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-08 10:35:02,414 - INFO - Status check requested for task ba589299-6d92-4d21-8233-793af4a2003a from IP: 127.0.0.1
+2025-02-08 10:35:02,475 - INFO - Status for task ba589299-6d92-4d21-8233-793af4a2003a: Processing
+2025-02-08 10:35:02,476 - INFO - 127.0.0.1 - - [08/Feb/2025 10:35:02] "GET /check-status/ba589299-6d92-4d21-8233-793af4a2003a HTTP/1.1" 200 -
+2025-02-08 10:35:30,820 - INFO - Request f6b52f1d-6762-4a55-b137-50c2bac33b67: New image check request received from IP: 127.0.0.1
+2025-02-08 10:35:30,834 - INFO - {"request_id": "f6b52f1d-6762-4a55-b137-50c2bac33b67", "timestamp": "2025-02-08T09:35:30.834370", "action": "file_received", "details": {"filename": "test_image.png", "content_type": "image/png"}}
+2025-02-08 10:35:30,863 - INFO - Request f6b52f1d-6762-4a55-b137-50c2bac33b67: Image passed all security checks
+2025-02-08 10:35:30,934 - INFO - Request f6b52f1d-6762-4a55-b137-50c2bac33b67: Task submitted to Celery. Processing time: 0.11s
+2025-02-08 10:35:30,936 - INFO - 127.0.0.1 - - [08/Feb/2025 10:35:30] "POST /check-image HTTP/1.1" 200 -
+2025-02-08 10:35:46,000 - INFO - Status check requested for task 8cec6248-b1e8-405e-a817-c3825887ff47 from IP: 127.0.0.1
+2025-02-08 10:35:46,043 - INFO - Status for task 8cec6248-b1e8-405e-a817-c3825887ff47: Processing
+2025-02-08 10:35:46,044 - INFO - 127.0.0.1 - - [08/Feb/2025 10:35:46] "GET /check-status/8cec6248-b1e8-405e-a817-c3825887ff47 HTTP/1.1" 200 -
+2025-02-08 10:37:00,211 - INFO -  * Detected change in 'C:\\Users\\USER\\Documents\\img-quality-check\\app.py', reloading
+2025-02-08 10:37:00,260 - INFO -  * Detected change in 'C:\\Users\\USER\\Documents\\img-quality-check\\app.py', reloading
+2025-02-08 10:37:00,458 - INFO -  * Restarting with stat
+2025-02-08 10:37:00,464 - INFO -  * Restarting with stat
+2025-02-08 10:37:02,879 - WARNING -  * Debugger is active!
+2025-02-08 10:37:02,904 - INFO -  * Debugger PIN: 100-818-088
+2025-02-08 10:37:03,139 - WARNING -  * Debugger is active!
+2025-02-08 10:37:03,166 - INFO -  * Debugger PIN: 100-818-088
+2025-02-08 10:40:20,787 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-08 10:40:20,787 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-08 10:40:20,790 - INFO -  * Restarting with stat
+2025-02-08 10:40:21,542 - WARNING -  * Debugger is active!
+2025-02-08 10:40:21,547 - INFO -  * Debugger PIN: 100-818-088
+2025-02-08 10:40:57,154 - INFO -  * Detected change in 'C:\\Users\\USER\\Documents\\img-quality-check\\app.py', reloading
+2025-02-08 10:40:57,265 - INFO -  * Restarting with stat
+2025-02-08 10:40:58,304 - WARNING -  * Debugger is active!
+2025-02-08 10:40:58,310 - INFO -  * Debugger PIN: 100-818-088
+2025-02-08 10:43:33,129 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-08 10:43:33,130 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-08 10:43:33,141 - INFO -  * Restarting with stat
+2025-02-08 10:43:33,893 - WARNING -  * Debugger is active!
+2025-02-08 10:43:33,899 - INFO -  * Debugger PIN: 100-818-088
+2025-02-08 10:43:38,600 - INFO - Status check requested for task 8cec6248-b1e8-405e-a817-c3825887ff47 from IP: 127.0.0.1
+2025-02-08 10:43:38,670 - INFO - Status for task 8cec6248-b1e8-405e-a817-c3825887ff47: Processing
+2025-02-08 10:43:38,671 - INFO - 127.0.0.1 - - [08/Feb/2025 10:43:38] "GET /check-status/8cec6248-b1e8-405e-a817-c3825887ff47 HTTP/1.1" 200 -
+2025-02-08 10:43:38,899 - INFO - 127.0.0.1 - - [08/Feb/2025 10:43:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-08 10:43:59,016 - INFO - Request 151918f5-9403-409d-abff-c1297ee1d632: New image check request received from IP: 127.0.0.1
+2025-02-08 10:43:59,019 - INFO - {"request_id": "151918f5-9403-409d-abff-c1297ee1d632", "timestamp": "2025-02-08T09:43:59.019566", "action": "file_received", "details": {"filename": "passport photograph.jpg", "content_type": "image/jpeg"}}
+2025-02-08 10:43:59,290 - INFO - Request 151918f5-9403-409d-abff-c1297ee1d632: Image passed all security checks
+2025-02-08 10:43:59,356 - INFO - Request 151918f5-9403-409d-abff-c1297ee1d632: Task submitted to Celery. Processing time: 0.34s
+2025-02-08 10:43:59,357 - INFO - 127.0.0.1 - - [08/Feb/2025 10:43:59] "POST /check-image HTTP/1.1" 200 -
+2025-02-08 10:44:14,828 - INFO - Status check requested for task 1fbef397-0d7f-4f1d-b9cb-920a137aebcf from IP: 127.0.0.1
+2025-02-08 10:44:14,883 - INFO - Status for task 1fbef397-0d7f-4f1d-b9cb-920a137aebcf: Completed
+2025-02-08 10:44:14,884 - INFO - 127.0.0.1 - - [08/Feb/2025 10:44:14] "GET /check-status/1fbef397-0d7f-4f1d-b9cb-920a137aebcf HTTP/1.1" 200 -
+2025-02-08 10:44:15,119 - INFO - 127.0.0.1 - - [08/Feb/2025 10:44:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-08 10:45:15,656 - INFO - Status check requested for task 1fbef397-0d7f-4f1d-b9cb-920a137aebcf from IP: 127.0.0.1
+2025-02-08 10:45:15,710 - INFO - Status for task 1fbef397-0d7f-4f1d-b9cb-920a137aebcf: Completed
+2025-02-08 10:45:15,710 - INFO - 127.0.0.1 - - [08/Feb/2025 10:45:15] "GET /check-status/1fbef397-0d7f-4f1d-b9cb-920a137aebcf HTTP/1.1" 200 -
+2025-02-08 10:45:15,883 - INFO - 127.0.0.1 - - [08/Feb/2025 10:45:15] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-08 10:45:18,081 - INFO - Status check requested for task 1fbef397-0d7f-4f1d-b9cb-920a137aebcf from IP: 127.0.0.1
+2025-02-08 10:45:18,119 - INFO - Status for task 1fbef397-0d7f-4f1d-b9cb-920a137aebcf: Completed
+2025-02-08 10:45:18,120 - INFO - 127.0.0.1 - - [08/Feb/2025 10:45:18] "GET /check-status/1fbef397-0d7f-4f1d-b9cb-920a137aebcf HTTP/1.1" 200 -
+2025-02-08 10:45:36,848 - INFO - Request b72764e0-d531-4c0d-a1d7-ca378110dbd2: New image check request received from IP: 127.0.0.1
+2025-02-08 10:45:36,851 - INFO - {"request_id": "b72764e0-d531-4c0d-a1d7-ca378110dbd2", "timestamp": "2025-02-08T09:45:36.851362", "action": "file_received", "details": {"filename": "WhatsApp Image 2024-05-24 at 12.12.54_9ac42531.jpg", "content_type": "image/jpeg"}}
+2025-02-08 10:45:36,920 - INFO - Request b72764e0-d531-4c0d-a1d7-ca378110dbd2: Image passed all security checks
+2025-02-08 10:45:36,957 - INFO - Request b72764e0-d531-4c0d-a1d7-ca378110dbd2: Task submitted to Celery. Processing time: 0.11s
+2025-02-08 10:45:36,959 - INFO - 127.0.0.1 - - [08/Feb/2025 10:45:36] "POST /check-image HTTP/1.1" 200 -
+2025-02-08 10:45:37,137 - INFO - 127.0.0.1 - - [08/Feb/2025 10:45:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-08 10:45:55,608 - INFO - Status check requested for task bb74fd3e-439a-4d84-8a9b-9cb54b3030ff from IP: 127.0.0.1
+2025-02-08 10:45:55,663 - INFO - Status for task bb74fd3e-439a-4d84-8a9b-9cb54b3030ff: Completed
+2025-02-08 10:45:55,663 - INFO - 127.0.0.1 - - [08/Feb/2025 10:45:55] "GET /check-status/bb74fd3e-439a-4d84-8a9b-9cb54b3030ff HTTP/1.1" 200 -
+2025-02-08 10:47:14,527 - INFO - Request 9ff4f0f3-e579-4737-bd9b-4fc1f075f1a8: New image check request received from IP: 127.0.0.1
+2025-02-08 10:47:14,529 - INFO - {"request_id": "9ff4f0f3-e579-4737-bd9b-4fc1f075f1a8", "timestamp": "2025-02-08T09:47:14.529304", "action": "file_received", "details": {"filename": "1_9dbWWY4LzLIkjEHvDf4bDQ.jpg", "content_type": "image/jpeg"}}
+2025-02-08 10:47:14,550 - INFO - Request 9ff4f0f3-e579-4737-bd9b-4fc1f075f1a8: Image passed all security checks
+2025-02-08 10:47:14,587 - INFO - Request 9ff4f0f3-e579-4737-bd9b-4fc1f075f1a8: Task submitted to Celery. Processing time: 0.06s
+2025-02-08 10:47:14,588 - INFO - 127.0.0.1 - - [08/Feb/2025 10:47:14] "POST /check-image HTTP/1.1" 200 -
+2025-02-08 10:47:26,595 - INFO - Status check requested for task b1999bce-02f8-4ee5-8367-862405696c0f from IP: 127.0.0.1
+2025-02-08 10:47:26,630 - INFO - Status for task b1999bce-02f8-4ee5-8367-862405696c0f: Completed
+2025-02-08 10:47:26,631 - INFO - 127.0.0.1 - - [08/Feb/2025 10:47:26] "GET /check-status/b1999bce-02f8-4ee5-8367-862405696c0f HTTP/1.1" 200 -
+2025-02-08 10:48:35,826 - INFO - Request fcd1d49d-9b0d-41b9-9009-c5bc3334d8b6: New image check request received from IP: 127.0.0.1
+2025-02-08 10:48:35,829 - INFO - {"request_id": "fcd1d49d-9b0d-41b9-9009-c5bc3334d8b6", "timestamp": "2025-02-08T09:48:35.829467", "action": "file_received", "details": {"filename": "low-res-72dpi.jpg", "content_type": "image/jpeg"}}
+2025-02-08 10:48:35,836 - INFO - Request fcd1d49d-9b0d-41b9-9009-c5bc3334d8b6: Image passed all security checks
+2025-02-08 10:48:35,861 - INFO - Request fcd1d49d-9b0d-41b9-9009-c5bc3334d8b6: Task submitted to Celery. Processing time: 0.04s
+2025-02-08 10:48:35,862 - INFO - 127.0.0.1 - - [08/Feb/2025 10:48:35] "POST /check-image HTTP/1.1" 200 -
+2025-02-08 10:48:36,069 - INFO - 127.0.0.1 - - [08/Feb/2025 10:48:36] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-08 10:48:50,894 - INFO - Status check requested for task 0f2398d5-8b65-48d2-87de-675fff8782e0 from IP: 127.0.0.1
+2025-02-08 10:48:50,945 - INFO - Status for task 0f2398d5-8b65-48d2-87de-675fff8782e0: Completed
+2025-02-08 10:48:50,945 - INFO - 127.0.0.1 - - [08/Feb/2025 10:48:50] "GET /check-status/0f2398d5-8b65-48d2-87de-675fff8782e0 HTTP/1.1" 200 -
+2025-02-08 10:50:07,473 - INFO - Request 9a8c9458-08b2-4a7b-95dd-ab5a0260b2b8: New image check request received from IP: 127.0.0.1
+2025-02-08 10:50:07,478 - INFO - {"request_id": "9a8c9458-08b2-4a7b-95dd-ab5a0260b2b8", "timestamp": "2025-02-08T09:50:07.478827", "action": "file_received", "details": {"filename": "static-assets-upload5762320293891926022.jpg", "content_type": "image/jpeg"}}
+2025-02-08 10:50:07,505 - INFO - Request 9a8c9458-08b2-4a7b-95dd-ab5a0260b2b8: Image passed all security checks
+2025-02-08 10:50:07,565 - INFO - Request 9a8c9458-08b2-4a7b-95dd-ab5a0260b2b8: Task submitted to Celery. Processing time: 0.09s
+2025-02-08 10:50:07,566 - INFO - 127.0.0.1 - - [08/Feb/2025 10:50:07] "POST /check-image HTTP/1.1" 200 -
+2025-02-08 10:50:28,203 - INFO - Status check requested for task 8bb44ee5-d144-4faf-a842-204e02dfbfb1 from IP: 127.0.0.1
+2025-02-08 10:50:28,256 - INFO - Status for task 8bb44ee5-d144-4faf-a842-204e02dfbfb1: Completed
+2025-02-08 10:50:28,257 - INFO - 127.0.0.1 - - [08/Feb/2025 10:50:28] "GET /check-status/8bb44ee5-d144-4faf-a842-204e02dfbfb1 HTTP/1.1" 200 -
+2025-02-08 10:51:35,301 - INFO -  * Detected change in 'C:\\Users\\USER\\Documents\\img-quality-check\\app.py', reloading
+2025-02-08 10:51:35,419 - INFO -  * Restarting with stat
+2025-02-08 10:51:38,625 - WARNING -  * Debugger is active!
+2025-02-08 10:51:38,634 - INFO -  * Debugger PIN: 100-818-088
+2025-02-08 10:57:21,255 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-08 10:57:21,255 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-08 10:57:21,258 - INFO -  * Restarting with stat
+2025-02-08 10:57:22,134 - WARNING -  * Debugger is active!
+2025-02-08 10:57:22,139 - INFO -  * Debugger PIN: 100-818-088
+2025-02-08 10:57:26,657 - INFO - Request 36a6d8d2-4621-4e1c-bd1e-928ed15f7cac: New image check request received from IP: 127.0.0.1
+2025-02-08 10:57:26,669 - INFO - {"request_id": "36a6d8d2-4621-4e1c-bd1e-928ed15f7cac", "timestamp": "2025-02-08T09:57:26.669001", "action": "file_received", "details": {"filename": "static-assets-upload5762320293891926022.jpg", "content_type": "image/jpeg"}}
+2025-02-08 10:57:26,747 - INFO - Request 36a6d8d2-4621-4e1c-bd1e-928ed15f7cac: Image passed all security checks
+2025-02-08 10:57:26,894 - INFO - Request 36a6d8d2-4621-4e1c-bd1e-928ed15f7cac: Task submitted to Celery. Processing time: 0.24s
+2025-02-08 10:57:26,896 - INFO - 127.0.0.1 - - [08/Feb/2025 10:57:26] "POST /check-image HTTP/1.1" 200 -
+2025-02-08 10:57:31,973 - INFO - Request 5498671f-7009-4ed4-87d5-bf50454a0a78: New image check request received from IP: 127.0.0.1
+2025-02-08 10:57:31,977 - INFO - {"request_id": "5498671f-7009-4ed4-87d5-bf50454a0a78", "timestamp": "2025-02-08T09:57:31.977379", "action": "file_received", "details": {"filename": "static-assets-upload5762320293891926022.jpg", "content_type": "image/jpeg"}}
+2025-02-08 10:57:31,996 - INFO - Request 5498671f-7009-4ed4-87d5-bf50454a0a78: Image passed all security checks
+2025-02-08 10:57:32,060 - INFO - Request 5498671f-7009-4ed4-87d5-bf50454a0a78: Task submitted to Celery. Processing time: 0.09s
+2025-02-08 10:57:32,061 - INFO - 127.0.0.1 - - [08/Feb/2025 10:57:32] "POST /check-image HTTP/1.1" 200 -
+2025-02-08 10:57:49,517 - INFO - Status check requested for task 3d7c07de-a3ad-467c-8f7c-19ce04ab9f42 from IP: 127.0.0.1
+2025-02-08 10:57:49,569 - INFO - Status for task 3d7c07de-a3ad-467c-8f7c-19ce04ab9f42: Completed
+2025-02-08 10:57:49,571 - INFO - 127.0.0.1 - - [08/Feb/2025 10:57:49] "GET /check-status/3d7c07de-a3ad-467c-8f7c-19ce04ab9f42 HTTP/1.1" 200 -
+2025-02-08 10:58:06,131 - INFO - Status check requested for task 3d7c07de-a3ad-467c-8f7c-19ce04ab9f42 from IP: 127.0.0.1
+2025-02-08 10:58:06,175 - INFO - Status for task 3d7c07de-a3ad-467c-8f7c-19ce04ab9f42: Completed
+2025-02-08 10:58:06,176 - INFO - 127.0.0.1 - - [08/Feb/2025 10:58:06] "GET /check-status/3d7c07de-a3ad-467c-8f7c-19ce04ab9f42 HTTP/1.1" 200 -
+2025-02-08 10:59:01,182 - INFO -  * Detected change in 'C:\\Users\\USER\\Documents\\img-quality-check\\app.py', reloading
+2025-02-08 10:59:01,458 - INFO -  * Restarting with stat
+2025-02-08 10:59:02,653 - WARNING -  * Debugger is active!
+2025-02-08 10:59:02,660 - INFO -  * Debugger PIN: 100-818-088
+2025-02-08 10:59:04,781 - INFO - Status check requested for task 3d7c07de-a3ad-467c-8f7c-19ce04ab9f42 from IP: 127.0.0.1
+2025-02-08 10:59:04,845 - INFO - Status for task 3d7c07de-a3ad-467c-8f7c-19ce04ab9f42: Completed
+2025-02-08 10:59:04,846 - INFO - 127.0.0.1 - - [08/Feb/2025 10:59:04] "GET /check-status/3d7c07de-a3ad-467c-8f7c-19ce04ab9f42 HTTP/1.1" 200 -
+2025-02-08 10:59:12,614 - INFO - Status check requested for task 3d7c07de-a3ad-467c-8f7c-19ce04ab9f42 from IP: 127.0.0.1
+2025-02-08 10:59:12,665 - INFO - Status for task 3d7c07de-a3ad-467c-8f7c-19ce04ab9f42: Completed
+2025-02-08 10:59:12,666 - INFO - 127.0.0.1 - - [08/Feb/2025 10:59:12] "GET /check-status/3d7c07de-a3ad-467c-8f7c-19ce04ab9f42 HTTP/1.1" 200 -
+2025-02-08 10:59:24,567 - INFO - Request 930abd1c-1f6e-41aa-a2b8-82edb23863e2: New image check request received from IP: 127.0.0.1
+2025-02-08 10:59:24,572 - INFO - {"request_id": "930abd1c-1f6e-41aa-a2b8-82edb23863e2", "timestamp": "2025-02-08T09:59:24.572531", "action": "file_received", "details": {"filename": "static-assets-upload5762320293891926022.jpg", "content_type": "image/jpeg"}}
+2025-02-08 10:59:24,632 - INFO - Request 930abd1c-1f6e-41aa-a2b8-82edb23863e2: Image passed all security checks
+2025-02-08 10:59:24,700 - INFO - Request 930abd1c-1f6e-41aa-a2b8-82edb23863e2: Task submitted to Celery. Processing time: 0.13s
+2025-02-08 10:59:24,702 - INFO - 127.0.0.1 - - [08/Feb/2025 10:59:24] "POST /check-image HTTP/1.1" 200 -
+2025-02-08 10:59:39,912 - INFO - Status check requested for task d7db14a1-6e82-40b6-b2a1-ff17dd613fc0 from IP: 127.0.0.1
+2025-02-08 10:59:39,958 - INFO - Status for task d7db14a1-6e82-40b6-b2a1-ff17dd613fc0: Completed
+2025-02-08 10:59:39,960 - INFO - 127.0.0.1 - - [08/Feb/2025 10:59:39] "GET /check-status/d7db14a1-6e82-40b6-b2a1-ff17dd613fc0 HTTP/1.1" 200 -
+2025-02-08 11:00:35,165 - INFO -  * Detected change in 'C:\\Users\\USER\\Documents\\img-quality-check\\app.py', reloading
+2025-02-08 11:00:35,289 - INFO -  * Restarting with stat
+2025-02-08 11:00:36,187 - WARNING -  * Debugger is active!
+2025-02-08 11:00:36,193 - INFO -  * Debugger PIN: 100-818-088
+2025-02-08 11:00:56,423 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2025-02-08 11:00:56,424 - INFO - [33mPress CTRL+C to quit[0m
+2025-02-08 11:00:56,426 - INFO -  * Restarting with stat
+2025-02-08 11:00:57,433 - WARNING -  * Debugger is active!
+2025-02-08 11:00:57,438 - INFO -  * Debugger PIN: 100-818-088
+2025-02-08 11:00:59,297 - INFO - Status check requested for task d7db14a1-6e82-40b6-b2a1-ff17dd613fc0 from IP: 127.0.0.1
+2025-02-08 11:00:59,346 - INFO - Status for task d7db14a1-6e82-40b6-b2a1-ff17dd613fc0: Completed
+2025-02-08 11:00:59,347 - INFO - 127.0.0.1 - - [08/Feb/2025 11:00:59] "GET /check-status/d7db14a1-6e82-40b6-b2a1-ff17dd613fc0 HTTP/1.1" 200 -
+2025-02-08 11:00:59,486 - INFO - 127.0.0.1 - - [08/Feb/2025 11:00:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-08 11:01:07,584 - INFO - Request 69d95eb9-8440-4d56-bd23-2bd9f1271f87: New image check request received from IP: 127.0.0.1
+2025-02-08 11:01:07,588 - INFO - {"request_id": "69d95eb9-8440-4d56-bd23-2bd9f1271f87", "timestamp": "2025-02-08T10:01:07.588375", "action": "file_received", "details": {"filename": "static-assets-upload5762320293891926022.jpg", "content_type": "image/jpeg"}}
+2025-02-08 11:01:07,638 - INFO - Request 69d95eb9-8440-4d56-bd23-2bd9f1271f87: Image passed all security checks
+2025-02-08 11:01:07,704 - INFO - Request 69d95eb9-8440-4d56-bd23-2bd9f1271f87: Task submitted to Celery. Processing time: 0.12s
+2025-02-08 11:01:07,706 - INFO - 127.0.0.1 - - [08/Feb/2025 11:01:07] "POST /check-image HTTP/1.1" 200 -
+2025-02-08 11:01:07,919 - INFO - 127.0.0.1 - - [08/Feb/2025 11:01:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-08 11:01:13,049 - INFO - Request a63f5f7b-5fd0-4481-a7a8-6acc23dc22ee: New image check request received from IP: 127.0.0.1
+2025-02-08 11:01:13,051 - INFO - {"request_id": "a63f5f7b-5fd0-4481-a7a8-6acc23dc22ee", "timestamp": "2025-02-08T10:01:13.051993", "action": "file_received", "details": {"filename": "static-assets-upload5762320293891926022.jpg", "content_type": "image/jpeg"}}
+2025-02-08 11:01:13,070 - INFO - Request a63f5f7b-5fd0-4481-a7a8-6acc23dc22ee: Image passed all security checks
+2025-02-08 11:01:13,109 - INFO - Request a63f5f7b-5fd0-4481-a7a8-6acc23dc22ee: Task submitted to Celery. Processing time: 0.06s
+2025-02-08 11:01:13,111 - INFO - 127.0.0.1 - - [08/Feb/2025 11:01:13] "POST /check-image HTTP/1.1" 200 -
+2025-02-08 11:01:13,267 - INFO - 127.0.0.1 - - [08/Feb/2025 11:01:13] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-08 11:01:27,507 - INFO - Status check requested for task aed8b224-039f-498f-b55f-17baa01d5e35 from IP: 127.0.0.1
+2025-02-08 11:01:27,556 - INFO - Status for task aed8b224-039f-498f-b55f-17baa01d5e35: Completed
+2025-02-08 11:01:27,557 - INFO - 127.0.0.1 - - [08/Feb/2025 11:01:27] "GET /check-status/aed8b224-039f-498f-b55f-17baa01d5e35 HTTP/1.1" 200 -
+2025-02-08 11:02:20,761 - INFO - Request a1f43881-743d-4c6a-a315-5cb9a17ba754: New image check request received from IP: 127.0.0.1
+2025-02-08 11:02:20,763 - INFO - {"request_id": "a1f43881-743d-4c6a-a315-5cb9a17ba754", "timestamp": "2025-02-08T10:02:20.763759", "action": "file_received", "details": {"filename": "low-res-72dpi.jpg", "content_type": "image/jpeg"}}
+2025-02-08 11:02:20,770 - INFO - Request a1f43881-743d-4c6a-a315-5cb9a17ba754: Image passed all security checks
+2025-02-08 11:02:20,806 - INFO - Request a1f43881-743d-4c6a-a315-5cb9a17ba754: Task submitted to Celery. Processing time: 0.05s
+2025-02-08 11:02:20,807 - INFO - 127.0.0.1 - - [08/Feb/2025 11:02:20] "POST /check-image HTTP/1.1" 200 -
+2025-02-08 11:02:21,073 - INFO - 127.0.0.1 - - [08/Feb/2025 11:02:21] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-08 11:02:37,416 - INFO - Status check requested for task eaffe6b9-75ac-4ceb-8245-c18bbee8d2c0 from IP: 127.0.0.1
+2025-02-08 11:02:37,451 - INFO - Status for task eaffe6b9-75ac-4ceb-8245-c18bbee8d2c0: Completed
+2025-02-08 11:02:37,452 - INFO - 127.0.0.1 - - [08/Feb/2025 11:02:37] "GET /check-status/eaffe6b9-75ac-4ceb-8245-c18bbee8d2c0 HTTP/1.1" 200 -
+2025-02-08 11:02:45,949 - INFO - Status check requested for task d7db14a1-6e82-40b6-b2a1-ff17dd613fc0 from IP: 127.0.0.1
+2025-02-08 11:02:46,005 - INFO - Status for task d7db14a1-6e82-40b6-b2a1-ff17dd613fc0: Completed
+2025-02-08 11:02:46,007 - INFO - 127.0.0.1 - - [08/Feb/2025 11:02:46] "GET /check-status/d7db14a1-6e82-40b6-b2a1-ff17dd613fc0 HTTP/1.1" 200 -
+2025-02-08 11:05:59,754 - INFO - Status check requested for task eaffe6b9-75ac-4ceb-8245-c18bbee8d2c0 from IP: 127.0.0.1
+2025-02-08 11:05:59,795 - INFO - Status for task eaffe6b9-75ac-4ceb-8245-c18bbee8d2c0: Completed
+2025-02-08 11:05:59,796 - INFO - 127.0.0.1 - - [08/Feb/2025 11:05:59] "GET /check-status/eaffe6b9-75ac-4ceb-8245-c18bbee8d2c0 HTTP/1.1" 200 -
+2025-02-08 11:05:59,981 - INFO - 127.0.0.1 - - [08/Feb/2025 11:05:59] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-08 11:06:27,313 - INFO - Request 293c2d3d-aa45-44ad-b49b-207559c8a61e: New image check request received from IP: 127.0.0.1
+2025-02-08 11:06:27,321 - INFO - {"request_id": "293c2d3d-aa45-44ad-b49b-207559c8a61e", "timestamp": "2025-02-08T10:06:27.321738", "action": "file_received", "details": {"filename": "passport (1).jpg", "content_type": "image/jpeg"}}
+2025-02-08 11:06:27,350 - INFO - Request 293c2d3d-aa45-44ad-b49b-207559c8a61e: Image passed all security checks
+2025-02-08 11:06:27,446 - INFO - Request 293c2d3d-aa45-44ad-b49b-207559c8a61e: Task submitted to Celery. Processing time: 0.13s
+2025-02-08 11:06:27,448 - INFO - 127.0.0.1 - - [08/Feb/2025 11:06:27] "POST /check-image HTTP/1.1" 200 -
+2025-02-08 11:06:27,840 - INFO - 127.0.0.1 - - [08/Feb/2025 11:06:27] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-02-08 11:06:45,557 - INFO - Status check requested for task 426a44a9-e0ea-4f03-8579-fb67ca2a69f2 from IP: 127.0.0.1
+2025-02-08 11:06:45,612 - INFO - Status for task 426a44a9-e0ea-4f03-8579-fb67ca2a69f2: Completed
+2025-02-08 11:06:45,613 - INFO - 127.0.0.1 - - [08/Feb/2025 11:06:45] "GET /check-status/426a44a9-e0ea-4f03-8579-fb67ca2a69f2 HTTP/1.1" 200 -
